@@ -142,12 +142,12 @@ modem[2]    = { 'desc' : 'Mult Media Service Centre',
                     'query': 'AT+QMMSCFG="mmsc"', 
                     'expected': '+MMSCHOST+', 
                     'correct': 'AT+QMMSCFG="mmsc", "http://"+MMSCHOST+'}
-...
+'''
 modem[3]    = { 'desc' : 'Provider Proxy Details',
                     'query': 'AT+QMMSCFG="proxy"', 
                     'expected': '+MMSProxy+', 
                     'correct': 'AT+QMMSCFG="proxy","+MMSProxy+",+MMSProxyPort+'}
-'''
+
 modem[4]    = { 'desc' : 'Character Set',
                     'query': 'AT+QMMSCFG="character"', 
                     'expected': 'UTF8', 
