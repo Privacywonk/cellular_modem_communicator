@@ -18,11 +18,8 @@ and Sixfab.com PCIe module...
 Cellular Info
 -------------
 
-Country: Canada (Sudbury Ontario)
-Micro SIM Service Provider: Rogers.com
-Band: North America
-APN: ltemobile.apn
-Rogers: mms.gprs.rogers.com
+Update Global Variables in cellular_communicator.py (APNHost, MSCSHost, Proxy, and Proxy Port) to your carriers specific details. Example uses US T-mobile.
+
 Port: /dev/ttyUSB3
   
   
