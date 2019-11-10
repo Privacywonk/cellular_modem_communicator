@@ -87,6 +87,11 @@ imagefile_holder=''
 gConn=None
 SMSAction = []
 SMSForward = ''
+APNHost = 'fast.t-mobile.com'
+MMSCHOST = 'mms.msg.eng.t-mobile.com/mms/wapenc'
+MMSProxy = ''
+MMSProxyPort = ''
+
 
 # Paths and Log Filenames
 filename = inspect.getframeinfo(inspect.currentframe()).filename
@@ -127,20 +132,21 @@ correct - AT Command to set the Setting to desired Params
 modem={}
 modem[0]    = { 'desc' : 'APN details',
                     'query': 'AT+QICSGP=1', 
-                    'expected': '"ltemobile.apn","",""', 
-                    'correct': 'AT+QICSGP=1,1,"ltemobile.apn","","",0'}
+                    'expected': '"+APNHost+","",""',
+                    'correct': 'AT+QICSGP=1,1,"+APNHost+","","",0'}
 modem[1]    = { 'desc' : 'Context ID',
                     'query': 'AT+QMMSCFG="contextid"', 
                     'expected': '"contextid",1', 
                     'correct': 'AT+QMMSCFG="contextid",1'}
 modem[2]    = { 'desc' : 'Mult Media Service Centre',
                     'query': 'AT+QMMSCFG="mmsc"', 
-                    'expected': 'mms.gprs.rogers.com', 
-                    'correct': 'AT+QMMSCFG="mmsc", "http://mms.gprs.rogers.com"'}
+                    'expected': '+MMSCHOST+', 
+                    'correct': 'AT+QMMSCFG="mmsc", "http://"+MMSCHOST+'}
+...
 modem[3]    = { 'desc' : 'Provider Proxy Details',
                     'query': 'AT+QMMSCFG="proxy"', 
-                    'expected': '10.128.1.69', 
-                    'correct': 'AT+QMMSCFG="proxy","10.128.1.69",80'}
+                    'expected': '+MMSProxy+', 
+                    'correct': 'AT+QMMSCFG="proxy","+MMSProxy+",+MMSProxyPort+'}
 '''
 modem[4]    = { 'desc' : 'Character Set',
                     'query': 'AT+QMMSCFG="character"', 
